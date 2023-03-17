@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import {
   NumberZero,
@@ -14,7 +14,7 @@ import {
   Plus,
   Minus,
   Divide,
-  Percent,
+  Radical,
   Equals,
   Backspace,
   Eraser,
@@ -25,6 +25,20 @@ export default function Home() {
   const [result, setResult] = useState("0");
   const [current, setCurrent] = useState("");
   const ItemSize = 32;
+
+  useEffect(() => {
+    const element = document.querySelector(".result");
+
+    if (result.length > 10) {
+      element?.classList.add("bigDisplayResult");
+      if (result.length > 15) {
+        const exponentialNotation = Number.parseFloat(result).toExponential(2);
+        setResult(exponentialNotation);
+      }
+    } else {
+      element?.classList.remove("bigDisplayResult");
+    }
+  }, [result]);
 
   function clear() {
     setCurrent("");
@@ -43,11 +57,8 @@ export default function Home() {
     }
   }
 
-  function plus() {}
-
-  // Começa a dar errado
   function addToCurrent(type: string) {
-    if (current.length > 1) {
+    if (current.length > 1 && current.search("sqr") == -1) {
       calculate();
     } else {
       setCurrent(`${result} ${type}`);
@@ -59,7 +70,7 @@ export default function Home() {
     let calcResult: number = 0;
 
     const currentArr = current.split(" ");
-    const numberInCurrent = currentArr[0];
+    const numberInCurrent = currentArr[0].replace(",", ".");
     const type = currentArr.pop();
 
     if (type == "=") {
@@ -95,6 +106,22 @@ export default function Home() {
     }
   }
 
+  function square() {
+    const NumberToSquare = +result.replace(",", ".");
+    const calcResult = Math.sqrt(NumberToSquare);
+    const fixedResult = parseFloat(calcResult.toFixed(2));
+    const calcResultString = fixedResult.toString().replace(".", ",");
+
+    setCurrent(`sqr(${result})`);
+    setResult(calcResultString);
+  }
+
+  function addDot() {
+    if (result.search(",") == -1) {
+      setResult((res) => res + ",");
+    }
+  }
+
   return (
     <>
       <Head>
@@ -115,8 +142,8 @@ export default function Home() {
           <button onClick={clear} className="item">
             <Eraser size={ItemSize} />
           </button>
-          <button onClick={() => addToCurrent("%")} className="item">
-            <Percent size={ItemSize} />
+          <button onClick={square} className="item">
+            <Radical size={ItemSize} />
           </button>
           <button onClick={() => addToCurrent("/")} className="item">
             <Divide size={ItemSize} />
@@ -166,7 +193,9 @@ export default function Home() {
           <button onClick={() => addNumber("0")} className="item">
             <NumberZero size={ItemSize} />
           </button>
-          <button className="item">.</button>
+          <button onClick={addDot} className="item">
+            .
+          </button>
         </div>
       </main>
     </>
