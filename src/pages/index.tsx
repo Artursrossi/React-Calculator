@@ -58,6 +58,8 @@ export default function Home() {
   }
 
   function addToCurrent(type: string) {
+    if (+result.replace(",", ".") == 0) return;
+
     if (current.length > 1 && current.search("sqr") == -1) {
       calculate();
     } else {
@@ -73,27 +75,23 @@ export default function Home() {
     const numberInCurrent = currentArr[0].replace(",", ".");
     const type = currentArr.pop();
 
-    if (type == "=") {
-      clear();
-    }
-
     if (type == "+") {
-      calcResult = +numberInCurrent + +result;
+      calcResult = +numberInCurrent + +result.replace(",", ".");
       showResult(calcResult);
     }
 
     if (type == "-") {
-      calcResult = +numberInCurrent - +result;
+      calcResult = +numberInCurrent - +result.replace(",", ".");
       showResult(calcResult);
     }
 
     if (type == "x") {
-      calcResult = +numberInCurrent * +result;
+      calcResult = +numberInCurrent * +result.replace(",", ".");
       showResult(calcResult);
     }
 
     if (type == "/") {
-      calcResult = +numberInCurrent / +result;
+      calcResult = +numberInCurrent / +result.replace(",", ".");
       showResult(calcResult);
     }
 
@@ -107,6 +105,8 @@ export default function Home() {
   }
 
   function square() {
+    if (+result.replace(",", ".") == 0) return;
+
     const NumberToSquare = +result.replace(",", ".");
     const calcResult = Math.sqrt(NumberToSquare);
     const fixedResult = parseFloat(calcResult.toFixed(2));
