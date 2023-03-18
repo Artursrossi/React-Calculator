@@ -1,7 +1,9 @@
 # React-Calculator 🔥
 
-https://artursrossi.github.io/React-Calculator/
+<a href="https://artursrossi.github.io/React-Calculator/" target="_blank">https://artursrossi.github.io/React-Calculator/</a>
 
 <br>
  
-<img alt="preview" src="./public/preview.png" >
+<p align="center">
+  <img alt="preview" src="./public/preview.png">
+</p>
