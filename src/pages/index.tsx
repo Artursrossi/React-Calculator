@@ -131,7 +131,7 @@ export default function Home() {
           content="React Calculator by Artur Schincariol Rossi"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="./public/favicon.ico" />
       </Head>
       <main className="main">
         <div className="display">
