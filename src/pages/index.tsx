@@ -139,82 +139,122 @@ export default function Home() {
           <div className="result">{result}</div>
         </div>
         <div className="controls">
-          <button name="Clear" onClick={clear} className="item">
+          <button aria-label="Clear" onClick={clear} className="item">
             <Eraser size={ItemSize} />
           </button>
-          <button name="Radical" onClick={square} className="item">
+          <button aria-label="Radical" onClick={square} className="item">
             <Radical size={ItemSize} />
           </button>
           <button
-            name="Divide"
+            aria-label="Divide"
             onClick={() => addToCurrent("/")}
             className="item"
           >
             <Divide size={ItemSize} />
           </button>
           <button
-            name="Multiply"
+            aria-label="Multiply"
             onClick={() => addToCurrent("x")}
             className="item"
           >
             <X size={ItemSize} />
           </button>
-          <button name="7" onClick={() => addNumber("7")} className="item">
+          <button
+            aria-label="7"
+            onClick={() => addNumber("7")}
+            className="item"
+          >
             <NumberSeven size={ItemSize} />
           </button>
-          <button name="8" onClick={() => addNumber("8")} className="item">
+          <button
+            aria-label="8"
+            onClick={() => addNumber("8")}
+            className="item"
+          >
             <NumberEight size={ItemSize} />
           </button>
-          <button name="9" onClick={() => addNumber("9")} className="item">
+          <button
+            aria-label="9"
+            onClick={() => addNumber("9")}
+            className="item"
+          >
             <NumberNine size={ItemSize} />
           </button>
           <button
-            name="Minus"
+            aria-label="Minus"
             onClick={() => addToCurrent("-")}
             className="item"
           >
             <Minus size={ItemSize} />
           </button>
-          <button name="4" onClick={() => addNumber("4")} className="item">
+          <button
+            aria-label="4"
+            onClick={() => addNumber("4")}
+            className="item"
+          >
             <NumberFour size={ItemSize} />
           </button>
-          <button name="5" onClick={() => addNumber("5")} className="item">
+          <button
+            aria-label="5"
+            onClick={() => addNumber("5")}
+            className="item"
+          >
             <NumberFive size={ItemSize} />
           </button>
-          <button name="6" onClick={() => addNumber("6")} className="item">
+          <button
+            aria-label="6"
+            onClick={() => addNumber("6")}
+            className="item"
+          >
             <NumberSix size={ItemSize} />
           </button>
           <button
-            name="Plus"
+            aria-label="Plus"
             onClick={() => addToCurrent("+")}
             className="item"
           >
             <Plus size={ItemSize} />
           </button>
-          <button name="1" onClick={() => addNumber("1")} className="item">
+          <button
+            aria-label="1"
+            onClick={() => addNumber("1")}
+            className="item"
+          >
             <NumberOne size={ItemSize} />
           </button>
-          <button name="2" onClick={() => addNumber("2")} className="item">
+          <button
+            aria-label="2"
+            onClick={() => addNumber("2")}
+            className="item"
+          >
             <NumberTwo size={ItemSize} />
           </button>
-          <button name="3" onClick={() => addNumber("3")} className="item">
+          <button
+            aria-label="3"
+            onClick={() => addNumber("3")}
+            className="item"
+          >
             <NumberThree size={ItemSize} />
           </button>
           <button
-            name="Equals"
+            aria-label="Equals"
             id="Equals"
             onClick={calculate}
             className="item"
           >
             <Equals size={ItemSize} />
           </button>
-          <button name="Backspace" onClick={backSpace} className="item">
+          <button aria-label="Backspace" onClick={backSpace} className="item">
             <Backspace size={ItemSize} />
           </button>
-          <button name="0" onClick={() => addNumber("0")} className="item">
+          <button
+            aria-label="0"
+            onClick={() => addNumber("0")}
+            className="item"
+          >
             <NumberZero size={ItemSize} />
           </button>
-          <button name="Dot" onClick={addDot} className="item">
+          <button aria-label="Dot" onClick={addDot} className="item">
             .
           </button>
         </div>
