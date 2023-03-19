@@ -139,61 +139,82 @@ export default function Home() {
           <div className="result">{result}</div>
         </div>
         <div className="controls">
-          <button onClick={clear} className="item">
+          <button name="Clear" onClick={clear} className="item">
             <Eraser size={ItemSize} />
           </button>
-          <button onClick={square} className="item">
+          <button name="Radical" onClick={square} className="item">
             <Radical size={ItemSize} />
           </button>
-          <button onClick={() => addToCurrent("/")} className="item">
+          <button
+            name="Divide"
+            onClick={() => addToCurrent("/")}
+            className="item"
+          >
             <Divide size={ItemSize} />
           </button>
-          <button onClick={() => addToCurrent("x")} className="item">
+          <button
+            name="Multiply"
+            onClick={() => addToCurrent("x")}
+            className="item"
+          >
             <X size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("7")} className="item">
+          <button name="7" onClick={() => addNumber("7")} className="item">
             <NumberSeven size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("8")} className="item">
+          <button name="8" onClick={() => addNumber("8")} className="item">
             <NumberEight size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("9")} className="item">
+          <button name="9" onClick={() => addNumber("9")} className="item">
             <NumberNine size={ItemSize} />
           </button>
-          <button onClick={() => addToCurrent("-")} className="item">
+          <button
+            name="Minus"
+            onClick={() => addToCurrent("-")}
+            className="item"
+          >
             <Minus size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("4")} className="item">
+          <button name="4" onClick={() => addNumber("4")} className="item">
             <NumberFour size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("5")} className="item">
+          <button name="5" onClick={() => addNumber("5")} className="item">
             <NumberFive size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("6")} className="item">
+          <button name="6" onClick={() => addNumber("6")} className="item">
             <NumberSix size={ItemSize} />
           </button>
-          <button onClick={() => addToCurrent("+")} className="item">
+          <button
+            name="Plus"
+            onClick={() => addToCurrent("+")}
+            className="item"
+          >
             <Plus size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("1")} className="item">
+          <button name="1" onClick={() => addNumber("1")} className="item">
             <NumberOne size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("2")} className="item">
+          <button name="2" onClick={() => addNumber("2")} className="item">
             <NumberTwo size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("3")} className="item">
+          <button name="3" onClick={() => addNumber("3")} className="item">
             <NumberThree size={ItemSize} />
           </button>
-          <button id="Equals" onClick={calculate} className="item">
+          <button
+            name="Equals"
+            id="Equals"
+            onClick={calculate}
+            className="item"
+          >
             <Equals size={ItemSize} />
           </button>
-          <button onClick={backSpace} className="item">
+          <button name="Backspace" onClick={backSpace} className="item">
             <Backspace size={ItemSize} />
           </button>
-          <button onClick={() => addNumber("0")} className="item">
+          <button name="0" onClick={() => addNumber("0")} className="item">
             <NumberZero size={ItemSize} />
           </button>
-          <button onClick={addDot} className="item">
+          <button name="Dot" onClick={addDot} className="item">
             .
           </button>
         </div>
